@@ -4,7 +4,9 @@
 import random
 HOW_MUCH = 100
 
-tokens =["horse","zebra","donkey","unicorn"]
+tokens =["horse","horse","horse",
+         "zebra","zebra","zebra",
+         "donkey","donkey","donkey","unicorn"]
 
 unicorn_count = 0
 zebhor_count = 0
@@ -28,4 +30,4 @@ print("zebras and horses:{}".format(zebhor_count))
 print("Donkeys:{}".format(donkey_count))
 print()
 print("You spent:{}".format(HOW_MUCH))
-print("Winnings:{}".format(winnings))
+print("Winnings:{:.2f}".format(winnings))
