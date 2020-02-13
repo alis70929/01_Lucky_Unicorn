@@ -1,5 +1,5 @@
 # Lucky Unicorn Component 4
-# Payment mechanics
+# End Game mechanics
 
 #assume starting amount is $10
 total = int(input("How much would you like to play with: "))
@@ -26,3 +26,8 @@ while keepgoing == "":
 
     if total < 1:
         print("Sorry, you dont have enough money to continue. Game Over")
+        keepgoing = "end"
+    else:
+        keepgoing = input("Press <enter> to play agin or any key to quit ")
+
+print("Thank you for playing")

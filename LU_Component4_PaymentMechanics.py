@@ -10,13 +10,13 @@ token = input("Which token would you like?:")
 #Adjust total correctly for given token
 if token == "unicorn":
     total += 5
-    feedback = "Lucky, You won $5.00 "
+    feedback = "Congratulations, You won $5.00 "
 elif token == "donkey":
     total -= 1
-    feedback = "Unlucky, you won nothing"
+    feedback = "Sorry, you won nothing"
 else:
-    total += 0.5
-    feedback = "Nice, you won $0.50"
+    total -= 0.5
+    feedback = "Congratulations, you won $0.50"
 print()
 
 print(feedback)
