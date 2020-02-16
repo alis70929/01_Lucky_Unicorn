@@ -3,12 +3,12 @@
 
 #assume starting amount is $10
 total = int(input("How much would you like to play with: "))
-
-#Allow manual input of token for testing
-token = input("Which token would you like?: ")
-
 keepgoing = ""
 while keepgoing == "":
+    #Allow manual input of token for testing
+    token = input("Which token would you like?: ")
+
+
     #Adjust total correctly for given token
     if token == "unicorn":
         total += 5
