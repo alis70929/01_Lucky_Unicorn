@@ -4,7 +4,13 @@ import random
 
 #Functions go here
 
-
+# Makes the token statements look good.
+def token_statement(statement, char):
+    print()
+    print(char*len(statement))
+    print(statement)
+    print(char * len(statement))
+    print()
 # Integer checking function
 def intcheck(question,low,high):
     valid = False
@@ -25,8 +31,21 @@ def intcheck(question,low,high):
 
 #Main routine goes here
 
+# Introduction
+print("------ Lucky Unicorn ------")
+print()
+print("To play, enter an amount of money between $1 and $10 (Whole dollars only)")
+print()
+print("- It costs $1/round")
+print()
+print("Payouts...")
+print("- Unicorn: $5")
+print("- Horse/Zebra: $0.5")
+print("- Donkey: $0")
+print("")
+
 # Ask User how much they want to play with (min $1 max $10)
-balance = intcheck("How much money would you like to play with between {} - {}",1,10)
+balance = intcheck("How much money would you like to play with between ${:.2f} - ${:.2f}: ",1,10)
 
 keep_going = ""
 while keep_going == "":
@@ -44,17 +63,21 @@ while keep_going == "":
     # Adjust balance based on chosen token and generate feedback
     if chosen_token == "unicorn":
         balance += 5 # Wins 5 dollars
-        feedback = "Congratulations, You won $5.00 "
+        # Unicorn token statement
+        token_statement("*** Congratz,You got a unicorn. You won $5 ***","*")
     elif chosen_token == "donkey":
         balance -= 1 # Does not win anything (ie: loses $1)
-        feedback = "Sorry, you won nothing"
+        # Donkey token statement
+        token_statement("--- You got a donkey, you win nothing ---","-")
     else:
         balance -= 0.5 # 'Wins' 50c, paid 1 dollar so loses 50c
-        feedback = "Congratulations, you won $0.50"
+        # Zebra and horse token statement
+        token_statement("^^^ You got a {}, you won back $0.50 ^^^".format(chosen_token),"^")
     print()
-    # Display feedback and current balance
-    print(feedback)
+    # Display current balance
+    print()
     print("You have ${:.2f} to play with".format(balance))
+    print()
 
     # If user has eneough money ask them if they want to keep playing. If they do not have enough money end the game
     if balance < 1:
