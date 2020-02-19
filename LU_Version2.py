@@ -55,10 +55,9 @@ while keep_going == "":
              "zebra","zebra","zebra",
              "donkey","donkey","donkey","unicorn"]
 
-    # randomly choose and display a token
+    # randomly choose a token
     chosen_token = random.choice(tokens)
-    print()
-    print("You got a {}".format(chosen_token))
+
 
     # Adjust balance based on chosen token and generate feedback
     if chosen_token == "unicorn":
@@ -85,7 +84,7 @@ while keep_going == "":
         keep_going = "end"
     else:
         keep_going = input("Press <enter> to play agin or any key to quit ")
-        
+
 # Print a farewell and end results
 print("Thank you for playing")
 print("You have ended with ${:.2f}".format(balance))
