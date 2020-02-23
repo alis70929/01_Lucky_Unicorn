@@ -11,6 +11,8 @@ def token_statement(statement, char):
     print(statement)
     print(char * len(statement))
     print()
+    
+    
 # Integer checking function
 def intcheck(question,low,high):
     valid = False
@@ -20,7 +22,6 @@ def intcheck(question,low,high):
             response = int(input(question.format(low,high)))
             if low <= response <= high:
                 return response
-                valid = True
             else:
                 print(error)
                 print()
@@ -40,12 +41,12 @@ print("- It costs $1/round")
 print()
 print("Payouts...")
 print("- Unicorn: $5")
-print("- Horse/Zebra: $0.5")
+print("- Horse/Zebra: $0.50")
 print("- Donkey: $0")
 print("")
 
 # Ask User how much they want to play with (min $1 max $10)
-balance = intcheck("How much money would you like to play with between ${:.2f} - ${:.2f}: ",1,10)
+balance = intcheck("How much money would you like to play with between ${} - ${}: ",1,10)
 
 keep_going = ""
 while keep_going == "":
